@@ -1,0 +1,5 @@
+CREATE USER '..
+
+CREATE DATABASE ..
+
+GRANT USAGE ON database..
