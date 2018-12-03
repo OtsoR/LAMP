@@ -7,7 +7,7 @@ mariadb-server:
 /tmp/create_user.sql:
   file.managed:
     - mode: 600
-    - source: salt://LAMP/mariadb/create_user.sql
+    - source: salt://mariadb/create_user.sql
 
 'cat /tmp/create_user.sql | sudo mariadb -u root':
   cmd.run:
@@ -16,7 +16,7 @@ mariadb-server:
 /tmp/create_sql_database_access.sql:
   file.managed:
     - mode: 600
-    - source: salt://LAMP/mariadb/create_database_access.sql
+    - source: salt://mariadb/create_database_access.sql
 
 'cat /tmp/create_database_access.sql | sudo mariadb -u root':
   cmd.run:
