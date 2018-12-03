@@ -11,7 +11,7 @@ mariadb-server:
 
 'cat /tmp/create_user.sql | sudo mariadb -u root':
   cmd.run:
-    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^database$'"
+    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^otso$'"
 
 /tmp/create_sql_database_access.sql:
   file.managed:
@@ -20,7 +20,7 @@ mariadb-server:
 
 'cat /tmp/create_database_access.sql | sudo mariadb -u root':
   cmd.run:
-    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^database$'"
+    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^otso$'"
 
 
     

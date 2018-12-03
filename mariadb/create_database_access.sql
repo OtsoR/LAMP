@@ -1,5 +1,5 @@
-CREATE USER '..
 
-CREATE DATABASE ..
+CREATE DATABASE otso_lamp;
 
-GRANT USAGE ON database..
+GRANT USAGE ON otso_lamp.* TO 'Otso'@'localhost' IDENTIFIED BY 'mariadb';
+

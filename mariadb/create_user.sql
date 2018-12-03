@@ -1,3 +1,3 @@
-CREATE USER ‘Otso’@’localhost’ IDENTIFIED BY ‘**********’;
+CREATE USER ‘Otso’@’localhost’ IDENTIFIED BY ‘mariadb’;
 
 #this an example user creation
