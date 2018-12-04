@@ -14,20 +14,25 @@ mariadb-server:
     - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
 
 #.my.cnf works like this directly
-#/home/otso/.my.cnf:
+
+/home/xubuntu/.my.cnf:
+  file.managed:
+    - source: salt://LAMP/.my.cnf
+    - replace: False
+    - user: xubuntu
+    - group: xubuntu
+#    - (mode: 600) # this is not necessary
+
+# these do not work
+
+#/tmp/.my.cnf:
 #  file.managed:
 #    - mode: 744
 #    - source: salt://LAMP/.my.cnf
 
-
-/tmp/.my.cnf:
-  file.managed:
-    - mode: 744
-    - source: salt://LAMP/.my.cnf
-
-'sudo cp /tmp/.my.cnf /home/$USER/.my.cnf':
-  cmd.run:
-    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
+#'sudo cp /tmp/.my.cnf /home/$USER/.my.cnf':
+# cmd.run:
+#    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
 #    - onlyif: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
 
 #'cat /tmp/.my.cnf | tee ~/.my.cnf':
