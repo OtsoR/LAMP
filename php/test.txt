@@ -1,0 +1,8 @@
+/etc/skel/ examples
+
+shellscript.sh
+sudo chmod +r (/etc/skel/..) # shellscrip to be exec.. user can exec the script if they want
+
+sudo cp -riv /etc/skel/* /etc/skel/.??* /home/xubuntu/ #this an example how to copy user information from skel 
+sudo cp -riv /etc/skel/* /etc/skel/.??* /$home/ # /* doesnt copy .files thats why another /.??* which tells cp to copy .files  
+
