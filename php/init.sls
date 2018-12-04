@@ -9,3 +9,6 @@ php_installation:
   file.managed:
     - source: salt://LAMP/php//php.conf
 
+/home/xubuntu/public_html/index.php:
+  file.managed:
+    - source: salt://LAMP/php/default-index.php
