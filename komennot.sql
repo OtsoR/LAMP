@@ -1,9 +1,9 @@
-CREATE DATABASE AUTO CHARACTER SET utf8;
-GRANT ALL ON AUTO.* TO audi@localhost IDENTIFIED BY 'mersu';
+CREATE DATABASE heppa CHARACTER SET utf8;
+GRANT ALL ON heppa.* TO iron@localhost IDENTIFIED BY 'bear';
 
-USE AUTO;
-CREATE TABLE malli(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(1024));
-INSERT INTO malli(name) VALUES ('X5');
-INSERT INTO malli(name) VALUES ('A5');
-INSERT INTO malli(name) VALUES ('R8');
-SELECT * FROM malli;
+USE heppa;
+CREATE TABLE model(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(1024));
+INSERT INTO model(name) VALUES ('marin');
+INSERT INTO model(name) VALUES ('nakamura');
+INSERT INTO model(name) VALUES ('kona');
+
