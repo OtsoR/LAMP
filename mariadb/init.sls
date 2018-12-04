@@ -7,13 +7,35 @@ mariadb-server:
 /tmp/create_user.sql:
   file.managed:
     - mode: 600
-    - source: salt://komennot.sql
+    - source: salt://LAMP/komennot.sql
 
 'cat /tmp/create_user.sql | sudo mariadb -u root':
   cmd.run:
-    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^AUTO$'"
-    
- #.my.cnf cmr.run here maybe
+    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
+
+#.my.cnf works like this directly
+#/home/otso/.my.cnf:
+#  file.managed:
+#    - mode: 744
+#    - source: salt://LAMP/.my.cnf
+
+
+/tmp/.my.cnf:
+  file.managed:
+    - mode: 744
+    - source: salt://LAMP/.my.cnf
+
+'sudo cp /tmp/.my.cnf /home/$USER/.my.cnf':
+  cmd.run:
+    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
+#    - onlyif: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
+
+#'cat /tmp/.my.cnf | tee ~/.my.cnf':
+#  cmd.run:
+#    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
+
+
+
 
 
 #Another testing files
