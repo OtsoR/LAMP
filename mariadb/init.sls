@@ -13,12 +13,12 @@ mariadb-server:
   cmd.run:
     - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
 
-/home/xubuntu/.my.cnf:
+/home/otso/.my.cnf:
   file.managed:
     - source: salt://LAMP/mariadb/.my.cnf
     - replace: False
-    - user: xubuntu
-    - group: xubuntu
+    - user: otso
+    - group: otso
 
 #   - (mode: 600) # this is not necessary
 #   You need to give sudo chown root.salt .my.cnf  
