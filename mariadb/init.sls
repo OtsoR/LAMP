@@ -7,23 +7,25 @@ mariadb-server:
 /tmp/create_user.sql:
   file.managed:
     - mode: 600
-    - source: salt://LAMP/komennot.sql
+    - source: salt://LAMP/mariadb/komennot.sql
 
 'cat /tmp/create_user.sql | sudo mariadb -u root':
   cmd.run:
     - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
 
-#.my.cnf works like this directly
-
 /home/xubuntu/.my.cnf:
   file.managed:
-    - source: salt://LAMP/.my.cnf
+    - source: salt://LAMP/mariadb/.my.cnf
     - replace: False
     - user: xubuntu
     - group: xubuntu
-#    - (mode: 600) # this is not necessary
 
-# these do not work
+#   - (mode: 600) # this is not necessary
+#   You need to give sudo chown root.salt .my.cnf  
+
+
+
+# these do not work correctly
 
 #/tmp/.my.cnf:
 #  file.managed:
@@ -34,25 +36,3 @@ mariadb-server:
 # cmd.run:
 #    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
 #    - onlyif: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
-
-#'cat /tmp/.my.cnf | tee ~/.my.cnf':
-#  cmd.run:
-#    - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^heppa$'"
-
-
-
-
-
-#Another testing files
-
-#/tmp/create_sql_database_access.sql:
-#  file.managed:
-#    - mode: 600
-#    - source: salt://mariadb/create_database_access.sql
-
-#'cat /tmp/create_database_access.sql | sudo mariadb -u root':
- # cmd.run:
- #   - unless: "echo 'show databases' | sudo mariadb -u- root | grep '^otso$'"
-
-
-    
