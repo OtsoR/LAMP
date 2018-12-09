@@ -1,16 +1,16 @@
 vlc:
   pkg.installed
 
-~/.local/share/vlc/skins2/..
+/home/xubuntu/.local/share/vlc/skins2/'eDark Vlc.vlt' 
   file.managed:
-    - source: salt//vlc/..
+    - source: salt//vlc/'eDark Vlc.vlt' 
 
-~/.config/vlc/vlc-qt-interface.conf:
+/home/xubuntu/.config/vlc/vlc-qt-interface.conf:
   file.managed:
     - source: salt://vlc/vlc-qt-interface.conf
     - makedirs: true
 
-~/.config/vlc/vlcrc:
+/home/xubuntu/.config/vlc/vlcrc:
   file.managed:
     - source: salt://vlc/vlcrc
     - mode: 644 
@@ -18,5 +18,5 @@ vlc:
 vlc_running:
   service.running:
     - watch:
-      - file: ~/.config/vlc/vlcrc
+      - file: /home/xubuntu/.config/vlc/vlcrc
 
