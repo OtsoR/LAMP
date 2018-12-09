@@ -1,11 +1,21 @@
-installation:
-  -pkg.installed:
-    -pkgs:
+installation_terminal:
+  pkg.installed:
+    - pkgs:
       - curl
       - httpie
       - tree
       - screen
-      - firefox
       - pwgen
+
+installation_useful:
+  pkg.installed:
+    - pkgs:
+      - firefox
+      - virtualbox
+      - gimp
+      - chromium-browser
+      - gedit
+      - libreoffice
+
 
 
