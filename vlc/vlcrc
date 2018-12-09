@@ -1879,7 +1879,7 @@ qt-privacy-ask=0
 [skins2] # Skinnable Interface
 
 # Skin to use (string)
-skins2-last=/home/xubuntu/.local/share/vlc/skins2/eDark Vlc.vlt
+skins2-last=/home/xubuntu/.local/share/vlc/skins2/eDark_Vlc.vlt
 
 # Config of last used skin (string)
 #skins2-config=
