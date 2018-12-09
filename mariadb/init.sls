@@ -7,7 +7,7 @@ mariadb-server:
 /tmp/create_user.sql:
   file.managed:
     - mode: 600
-    - source: salt://LAMP/mariadb/komennot.sql
+    - source: salt://mariadb/komennot.sql
 
 'cat /tmp/create_user.sql | sudo mariadb -u root':
   cmd.run:
@@ -15,7 +15,7 @@ mariadb-server:
 
 /home/xubuntu/.my.cnf:
   file.managed:
-    - source: salt://LAMP/mariadb/.my.cnf
+    - source: salt://mariadb/.my.cnf
     - replace: False
     - user: xubuntu
     - group: xubuntu
