@@ -3,7 +3,7 @@ apache2:
 
 /var/www/html/index.html:
  file.managed:
-   - source: salt://LAMP/apache/default-index.html
+   - source: salt://apache/default-index.html
 
 /home/xubuntu/public_html:
   file.directory:
