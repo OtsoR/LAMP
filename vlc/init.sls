@@ -3,8 +3,9 @@ vlc:
 
 /home/xubuntu/.local/share/vlc/skins2/'eDark Vlc.vlt' 
   file.managed:
-    - source: http://www.videolan.org/vlc/download-skins2-go.php?url=eDark%20Vlc.vlt 
-
+    - source: salt://vlc/eDark_Vlc.vlt
+    - makedirs: True
+ 
 /home/xubuntu/.config/vlc/vlc-qt-interface.conf:
   file.managed:
     - source: salt://vlc/vlc-qt-interface.conf
@@ -19,6 +20,7 @@ vlc:
 vlc_running:
   service.running:
     - name: vlc
+    - reload: True
     - watch:
       - file: /home/xubuntu/.config/vlc/vlcrc
 
