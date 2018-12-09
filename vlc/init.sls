@@ -3,7 +3,7 @@ vlc:
 
 /home/xubuntu/.local/share/vlc/skins2/'eDark Vlc.vlt' 
   file.managed:
-    - source: salt://vlc/'eDark Vlc.vlt' 
+    - source: http://www.videolan.org/vlc/download-skins2-go.php?url=eDark%20Vlc.vlt 
 
 /home/xubuntu/.config/vlc/vlc-qt-interface.conf:
   file.managed:
