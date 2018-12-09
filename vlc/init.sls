@@ -1,7 +1,7 @@
 vlc:
   pkg.installed
 
-/home/xubuntu/.local/share/vlc/skins2/eDark_Vlc.vlt
+/home/xubuntu/.local/share/vlc/skins2/eDark_Vlc.vlt:
   file.managed:
     - source: salt://vlc/eDark_Vlc.vlt
     - makedirs: True
