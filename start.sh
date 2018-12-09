@@ -12,7 +12,7 @@ sleep 2s
 sudo apt-get update
 sleep 3s
 sudo apt-get install -y salt-master salt-minion git
-sleeps 2s
+sleep 2s
 sudo git clone https://github.com/OtsoR/LAMP.git /srv/salt
 
 git config --global user.email "otsorauta@gmail.com"
@@ -26,10 +26,10 @@ sleep 5s
 sudo salt-key -yA
 
 echo "Salt-minion is now ready "
-sleep 1s
+sleep 3s
 echo "Testing minion"
 sudo salt '*' test.ping
-sleep 1s
+sleep 3s
 echo "Driving the Salt-highstate"
 sudo salt '*' state.highstate
 
