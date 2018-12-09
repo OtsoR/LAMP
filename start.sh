@@ -29,7 +29,7 @@ echo "Salt-minion is now ready "
 sleep 3s
 echo "Testing minion"
 sudo salt '*' test.ping
-sleep 3s
+sleep 5s
 echo "Driving the Salt-highstate"
 sudo salt '*' state.highstate
 
