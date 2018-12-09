@@ -6,3 +6,4 @@ base:
   'xubuntu':
     - vlc
     - xfce4
+    - useful
