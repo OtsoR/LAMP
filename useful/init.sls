@@ -7,15 +7,16 @@ installation_terminal:
       - screen
       - pwgen
 
-installation_useful:
-  pkg.installed:
-    - pkgs:
-      - firefox
-      - virtualbox
-      - gimp
-      - chromium-browser
-      - gedit
-      - libreoffice
+# Not enough room in Live usb stick for these all
+#installation_useful:
+#  pkg.installed:
+#    - pkgs:
+#      - firefox
+#      - virtualbox
+#      - gimp
+#      - chromium-browse
+#      - gedit
+#      - libreoffice
 
 
 
