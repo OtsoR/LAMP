@@ -3,12 +3,13 @@ vlc:
 
 /home/xubuntu/.local/share/vlc/skins2/'eDark Vlc.vlt' 
   file.managed:
-    - source: salt//vlc/'eDark Vlc.vlt' 
+    - source: salt://vlc/'eDark Vlc.vlt' 
 
 /home/xubuntu/.config/vlc/vlc-qt-interface.conf:
   file.managed:
     - source: salt://vlc/vlc-qt-interface.conf
-    - makedirs: true
+    - replace: False
+    - makedirs: True
 
 /home/xubuntu/.config/vlc/vlcrc:
   file.managed:
@@ -17,6 +18,7 @@ vlc:
 
 vlc_running:
   service.running:
+    - name: vlc
     - watch:
       - file: /home/xubuntu/.config/vlc/vlcrc
 
