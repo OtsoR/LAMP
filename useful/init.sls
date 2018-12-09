@@ -1,10 +1,11 @@
 installation:
-  -pkgs:
-    - curl
-    - httpie
-    - tree
-    - screen
-    - firefox
-    - pwgen
+  -pkg.installed:
+    -pkgs:
+      - curl
+      - httpie
+      - tree
+      - screen
+      - firefox
+      - pwgen
 
 
