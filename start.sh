@@ -13,7 +13,7 @@ sudo apt-get update
 sleep 3s
 sudo apt-get install -y salt-master salt-minion git
 sleeps 2s
-git clone https://github.com/OtsoR/LAMP.git
+git clone https://github.com/OtsoR/LAMP.git /srv/salt
 
 git config --global user.email "otsorauta@gmail.com"
 git config --global user.name "Otso Rauta"
@@ -27,11 +27,7 @@ sudo salt-key -yA
 
 echo "Salt-minion is now ready "
 sleep 1s
-echo "Next: /srv/salt folder and copying LAMP.git there"
-
-sudo mkdir -p /srv/salt
-cd LAMP/
-sudo cp -r * /srv/salt
-sudo salt '*' state.highstate 
+echo "Driving the Salt-highstate"
+sudo salt '*' state.highstate
 
 echo "Start script is now finished hopefully..."
