@@ -5,7 +5,7 @@
     - source: salt://xfce4/terminalrc
     - user: xubuntu
     - group: xubuntu
-    - replace: False
+    - replace: True
     - makedirs: True
 
 #{% endif %}
