@@ -18,10 +18,10 @@
     - replace: True
     - makedirs: True
 
-terminalrc:
-  service.running:
-   - watch:
-     - file: /home/xubuntu/.config/xfce4/terminal/terminalrc
+#terminal_xfce4:
+#  service.running:
+#   - watch:
+#     - file: /home/xubuntu/.config/xfce4/terminal/terminalrc
 
 #{% endif %}
 
