@@ -8,6 +8,7 @@
     - replace: True
     - makedirs: True
     - reload: True
+    - enable: True
 
 /home/xubuntu/.config/xfce4/terminal/accels.scm:
   file.managed:
