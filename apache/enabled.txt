@@ -1,7 +1,7 @@
 #apache.a2ensite:
 salt '*' apache.a2ensite example.com
 
-#into ini.sls?
+#into init.sls?
 example.com:
   apache.a2ensite 
 
