@@ -1,0 +1,19 @@
+#apache.a2ensite:
+salt '*' apache.a2ensite example.com
+
+#into ini.sls?
+example.com:
+  apache.a2ensite 
+
+#apache.check_site_enabled:
+salt '*' apache.check_site_enabled example.com
+
+# add hosts
+/etc/hosts
+127.0.0.1 localhost example.com
+
+#or add entry
+example.com in hosts file:
+  host.present:
+    - name: example.com
+    - ip: 172.0.0.1
