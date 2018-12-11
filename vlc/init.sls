@@ -17,10 +17,11 @@ vlc:
     - source: salt://vlc/vlcrc
     - mode: 644 
 
-vlc_running:
-  service.running:
-    - name: vlc
-    - reload: True
-    - watch:
-      - file: /home/xubuntu/.config/vlc/vlcrc
+# unnecessary and not working
+#vlc_running:
+#  service.running:
+#    - name: vlc
+#    - reload: True
+#    - watch:
+#      - file: /home/xubuntu/.config/vlc/vlcrc
 
